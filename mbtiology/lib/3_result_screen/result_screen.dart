@@ -71,28 +71,11 @@ class _ResultScreenState extends State<ResultScreen> {
     if (bytes != null) {
       if (!mounted) return;
       await showDialog(
-        barrierDismissible: false,
+        barrierDismissible: true,
         context: context,
         builder: (_) => AlertDialog(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12.0),
-          ),
-          title: Row(
-            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              IconButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                icon: const Icon(Icons.chevron_left),
-              ),
-              const Text(
-                '저장하기',
-                style: TextStyle(
-                    // fontSize: 18.h,
-                    ),
-              ),
-            ],
           ),
           content: Image.memory(bytes),
           actionsAlignment: MainAxisAlignment.spaceEvenly,
@@ -124,6 +107,7 @@ class _ResultScreenState extends State<ResultScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: CommonValue.paperColor,
       body: SafeArea(
         child: ListView(
           children: [
