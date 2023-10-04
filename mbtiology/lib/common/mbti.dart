@@ -87,7 +87,7 @@ class MBTI {
     "ENTJ": [
       Gift.ticket,
       Gift.device,
-      // Gift.arcadegame,
+      Gift.arcadegame,
       Gift.wallet,
       Gift.dumbel,
     ],
