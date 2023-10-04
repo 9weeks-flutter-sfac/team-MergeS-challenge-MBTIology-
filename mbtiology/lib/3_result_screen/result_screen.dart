@@ -30,7 +30,6 @@ class _ResultScreenState extends State<ResultScreen> {
   late String personality = widget.type;
   late String predictPersonality = widget.predictType;
 
-
   String getScoreMBTI(String type, String predictType) {
     List<String> typeList = type.split('');
     List<String> predictTypeList = predictType.split('');
@@ -182,14 +181,6 @@ class _ResultScreenState extends State<ResultScreen> {
                             ),
                             Center(
                               child: Text(
-                                predictPersonality,
-                                style: const TextStyle(
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ),
-                            Center(
-                              child: Text(
                                 personality,
                                 style: const TextStyle(
                                   color: Colors.black,
@@ -198,8 +189,16 @@ class _ResultScreenState extends State<ResultScreen> {
                             ),
                             Center(
                               child: Text(
+                                predictPersonality,
+                                style: const TextStyle(
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                            Center(
+                              child: Text(
                                 getScoreMBTI(personality, predictPersonality),
-                                style: TextStyle(
+                                style: const TextStyle(
                                   color: Colors.black,
                                 ),
                               ),
@@ -219,7 +218,8 @@ class _ResultScreenState extends State<ResultScreen> {
                                   (e) => FadeInUp(
                                     delay: const Duration(milliseconds: 300),
                                     from: 50,
-                                    child: Image.asset(e, width: 50, height: 50),
+                                    child:
+                                        Image.asset(e, width: 50, height: 50),
                                     // child: ShakeY(
                                     //   from: 10,
                                     //   infinite: true,
@@ -317,7 +317,7 @@ class _ResultScreenState extends State<ResultScreen> {
                             text: personality == predictPersonality
                                 ? "일치합니다."
                                 : "다릅니다.",
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.black,
                             ),
