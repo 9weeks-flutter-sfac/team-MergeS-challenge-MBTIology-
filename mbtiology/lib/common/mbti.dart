@@ -1,6 +1,25 @@
 import 'package:mbtiology/3_result_screen/gift.dart';
 
 class MBTI {
+  static List<String> mbti = [
+    'ISTJ',
+    'ISFJ',
+    'INFJ',
+    'INTJ',
+    'ISTP',
+    'ISFP',
+    'INFP',
+    'INTP',
+    'ENFJ',
+    'ENTJ',
+    'ESTJ',
+    'ESFJ',
+    'ESTP',
+    'ESFP',
+    'ENFP',
+    'ENTP'
+  ];
+
   static Map gift = {
     "ISTJ": [
       Gift.device,
@@ -68,7 +87,7 @@ class MBTI {
     "ENTJ": [
       Gift.ticket,
       Gift.device,
-      Gift.arcadegame,
+      // Gift.arcadegame,
       Gift.wallet,
       Gift.dumbel,
     ],

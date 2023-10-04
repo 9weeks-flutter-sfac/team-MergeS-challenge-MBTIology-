@@ -295,11 +295,6 @@ class _TestScreenState extends State<TestScreen> {
                 style: ButtonStyle(),
               ),
             ),
-          // temp
-          // Text('ans'),
-          // Text(
-          //   myAns.toString(),
-          // ),
         ],
       ),
     );

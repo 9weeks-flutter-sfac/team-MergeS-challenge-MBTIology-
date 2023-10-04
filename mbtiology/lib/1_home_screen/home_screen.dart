@@ -1,25 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mbtiology/2_test_screen/test_screen.dart';
 import 'package:mbtiology/common/const.dart';
-
-List<String> mbti = [
-  'ISTJ',
-  'ISFJ',
-  'INFJ',
-  'INTJ',
-  'ISTP',
-  'ISFP',
-  'INFP',
-  'INTP',
-  'ENFJ',
-  'ENTJ',
-  'ESTJ',
-  'ESFJ',
-  'ESTP',
-  'ESFP',
-  'ENFP',
-  'ENTP'
-];
+import 'package:mbtiology/common/mbti.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -35,9 +17,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print('name: $name');
-    print('type: $type');
-
     return GestureDetector(
       onTap: () {
         FocusManager.instance.primaryFocus?.unfocus();
@@ -133,9 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 8,
-              ),
+              SizedBox(height: 8),
               Align(
                 alignment: Alignment.center,
                 child: Container(
@@ -258,11 +235,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           if (name.isEmpty) {
                             info = '이름을 입력해주세요';
                             setState(() {});
-                          } else if (type.length != 4 )  {
-                            // (mbti.contains(type.toUpperCase())
-
-
-                            // print(type.toUpperCase() in mbti);
+                          } else if (!MBTI.mbti.contains(type.toUpperCase())) {
                             info = '유형을 정확하게 입력해주세요';
                             setState(() {});
                           } else {
