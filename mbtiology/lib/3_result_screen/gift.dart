@@ -1,0 +1,33 @@
+class Gift {
+  static String cupcake = 'asset/images/cupcake.png';
+  static String device = 'asset/images/device.png';
+  static String dumbel = 'asset/images/dumbel.png';
+  static String pill = 'asset/images/pill.png';
+  static String ticket = 'asset/images/ticket.png';
+  static String lamp = 'asset/images/lamp.png';
+  static String lprecord = 'asset/images/lprecord.png';
+  static String arcadegame = 'asset/images/arcadegame.png';
+  static String flower = 'asset/images/flower.png';
+  static String shoes = 'asset/images/shoes.png';
+  static String schedule = 'asset/images/schedule.png';
+  static String diamond = 'asset/images/diamond.png';
+  static String book = 'asset/images/book.png';
+  static String planner = 'asset/images/planner.png';
+  static String housekeeping = 'asset/images/housekeeping.png';
+  static String coffeemaker = 'asset/images/coffeemaker.png';
+  static String incense = 'asset/images/incense.png';
+  static String letter = 'asset/images/letter.png';
+  static String yogamat = 'asset/images/yogamat.png';
+  static String heart = 'asset/images/heart.png';
+  static String puzzle = 'asset/images/puzzle.png';
+  static String toolbox = 'asset/images/toolbox.png';
+  static String crayons = 'asset/images/crayons.png';
+  static String piano = 'asset/images/piano.png';
+  static String camping = 'asset/images/camping.png';
+  static String painting = 'asset/images/painting.png';
+  static String rubik = 'asset/images/rubik.png';
+  static String perfume = 'asset/images/perfume.png';
+  static String wallet = 'asset/images/wallet.png';
+  static String tea = 'asset/images/tea.png';
+  static String car = 'asset/images/car.png';
+}
