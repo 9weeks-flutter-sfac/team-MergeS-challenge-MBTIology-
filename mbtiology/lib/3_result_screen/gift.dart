@@ -19,7 +19,7 @@ class Gift {
   static String letter = 'asset/images/letter.png';
   static String yogamat = 'asset/images/yogamat.png';
   static String heart = 'asset/images/heart.png';
-  static String puzzle = 'asset/images/puzzle.png';
+  static String puzzle = 'asset/images/puzzlegame.png';
   static String toolbox = 'asset/images/toolbox.png';
   static String crayons = 'asset/images/crayons.png';
   static String piano = 'asset/images/piano.png';

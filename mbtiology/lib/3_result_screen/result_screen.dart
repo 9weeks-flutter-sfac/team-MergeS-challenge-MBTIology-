@@ -227,27 +227,28 @@ class _ResultScreenState extends State<ResultScreen> {
                     const SizedBox(
                       height: 20,
                     ),
-                    // isOpen
-                    //     ? Row(
-                    //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    //         children: MBTI.gift[personality]!
-                    //             .map<Widget>(
-                    //               (e) => FadeInUp(
-                    //                 delay: const Duration(milliseconds: 300),
-                    //                 from: 50,
-                    //                 child: ShakeY(
-                    //                   from: 10,
-                    //                   infinite: true,
-                    //                   duration: const Duration(seconds: 4),
-                    //                   child: Image.asset(e, width: 50, height: 50),
-                    //                 ),
-                    //               ),
-                    //             )
-                    //             .toList(),
-                    //       )
-                    //     : const SizedBox(
-                    //         height: 50,
-                    //       ),
+                    isOpen
+                        ? Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: MBTI.gift[personality]!
+                                .map<Widget>(
+                                  (e) => FadeInUp(
+                                    delay: const Duration(milliseconds: 300),
+                                    from: 50,
+                                    child: Image.asset(e, width: 50, height: 50),
+                                    // child: ShakeY(
+                                    //   from: 10,
+                                    //   infinite: true,
+                                    //   duration: const Duration(seconds: 4),
+                                    //
+                                    // ),
+                                  ),
+                                )
+                                .toList(),
+                          )
+                        : const SizedBox(
+                            height: 50,
+                          ),
                     isOpen
                         ? GestureDetector(
                             onTapUp: (TapUpDetails details) => openBox(),
@@ -274,7 +275,7 @@ class _ResultScreenState extends State<ResultScreen> {
                       text: TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                            text: "$name님의 MBTI는",
+                            text: "$name님의 MBTI는 ",
                             style: const TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black),
