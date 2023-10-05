@@ -28,6 +28,6 @@ ResultScreen: 최상현<br>
 
 ### 스크린 샷
 <img width=30% alt="image" src="https://github.com/9weeks-flutter-sfac/team-MergeS-challenge-MBTIology-/assets/128967431/553ae21d-0056-4e1c-96b9-f3159ba63fc3">
-<img width=30% alt="image" src="https://github.com/9weeks-flutter-sfac/team-MergeS-challenge-MBTIology-/assets/128967431/caa2a8a1-4a72-411c-8431-2e8fb76a713a">
+<img width=30% alt="image" src="https://github.com/9weeks-flutter-sfac/team-MergeS-challenge-MBTIology-/assets/51229121/969b2e07-2c0a-41e4-9483-2a1b8b0a0b34">
 <img width=30% alt="image" src="https://github.com/9weeks-flutter-sfac/team-MergeS-challenge-MBTIology-/assets/51229121/d4b8ab90-7f07-4f5c-b9bf-73a954ac8f3d">
 
