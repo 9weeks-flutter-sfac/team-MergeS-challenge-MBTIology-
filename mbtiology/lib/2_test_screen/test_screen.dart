@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mbtiology/3_result_screen/result_screen.dart';
+import 'package:mbtiology/common/const.dart';
+import 'package:mbtiology/common/default_layout.dart';
 import 'package:mbtiology/common/questions.dart' as questions;
 
 class TestScreen extends StatefulWidget {
@@ -23,176 +25,127 @@ class _TestScreenState extends State<TestScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final defaultTextStyle = TextStyle(fontSize: 20);
+    const defaultTextStyle = TextStyle(
+      fontSize: 20,
+    );
 
-    return Scaffold(
-      backgroundColor: Color(0xFFD9D9D9),
-      appBar: AppBar(
-        foregroundColor: Colors.black,
-        title: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                '제2교시',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-              Text(
-                "남의 영역",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-              Text(
-                '좋아하는 형',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-            ],
-          ),
-        ),
-        centerTitle: true,
-        backgroundColor: Color(0xFFD9D9D9),
-        elevation: 0,
-        shape: Border(
-          bottom: BorderSide(
-            color: Colors.black,
-            width: 1,
-          ),
-        ),
-      ),
-      body: ListView(
+    return DefaultLayout(
+      appBar: renderAppBar(),
+      body: Column(
         children: [
+          Text(
+            '⭐️ ${widget.name}이(가) 어떤 사람인지 생각하며 답변해 주시기 바랍니다.',
+            style: defaultTextStyle,
+          ),
+          const SizedBox(height: 20),
+
+          // 문제 container
           Container(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16,
+              vertical: 32,
+            ),
+            decoration: BoxDecoration(
+              border: Border.all(
+                width: CommonValue.commonWidth,
+              ),
+            ),
+            height: 300,
+
+            // 문제 context
+            child: PageView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              controller: pageController,
+              itemCount: questions.mbti_qs.length,
+              itemBuilder: (context, index) {
+                return Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '${questions.mbti_qs[index]['order']}. ${questions.mbti_qs[index]['question']}',
+                      style: defaultTextStyle,
+                    ),
+                    const SizedBox(height: 16),
+                    Text(
+                      'a. ${questions.mbti_qs[index]['ans_a']}',
+                      style: defaultTextStyle,
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      'b. ${questions.mbti_qs[index]['ans_b']}',
+                      style: defaultTextStyle,
+                    ),
+                  ],
+                );
+              },
+            ),
+          ),
+          const SizedBox(height: 20),
+          // 보기 a, b
+          Container(
+            height: 60,
+            decoration: BoxDecoration(
+              border: Border.all(
+                width: CommonValue.commonWidth,
+              ),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text(
-                  '⭐️ ${widget.name}이(가) 어떤 사람인지 생각하며 답변해 주시기 바랍니다.',
-                  style: defaultTextStyle,
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: const CircleBorder(
+                      side: BorderSide(
+                        color: Colors.black,
+                      ),
+                    ),
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black,
+                    elevation: 0,
+                  ),
+                  onPressed: () {
+                    myAns.add(0);
+                    pageController.animateToPage(
+                      page++,
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.easeIn,
+                    );
+                    setState(() {});
+                  },
+                  child: const Text('a', style: defaultTextStyle),
                 ),
-                const SizedBox(height: 20),
-                // 문제 container
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  // width: 100,
-                  height: 180,
-                  decoration: BoxDecoration(border: Border.all()),
-
-                  // 문제 context
-                  child: PageView.builder(
-                    physics: NeverScrollableScrollPhysics(),
-                    controller: pageController,
-                    itemCount: questions.mbti_qs.length,
-                    itemBuilder: (context, index) {
-                      return Column(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            questions.mbti_qs[index]['order'].toString() +
-                                '. ' +
-                                questions.mbti_qs[index]['question'].toString(),
-                            style: defaultTextStyle,
-                          ),
-                          SizedBox(
-                            height: 16,
-                          ),
-                          Text(
-                            'a. ' +
-                                questions.mbti_qs[index]['ans_a'].toString(),
-                            style: defaultTextStyle,
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            'b. ' +
-                                questions.mbti_qs[index]['ans_b'].toString(),
-                            style: defaultTextStyle,
-                          ),
-                        ],
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: const CircleBorder(
+                      side: BorderSide(
+                        color: Colors.black,
+                      ),
+                    ),
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black,
+                    elevation: 0,
+                  ),
+                  onPressed: () {
+                    if (page <= 70) {
+                      myAns.add(1);
+                      pageController.animateToPage(
+                        page++,
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeIn,
                       );
-                    },
+                    }
+
+                    setState(() {});
+                  },
+                  child: const Text(
+                    'b',
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
                   ),
                 ),
-                SizedBox(height: 30),
-                // 보기 a, b
-                Container(
-                  height: 60,
-                  decoration: BoxDecoration(border: Border.all()),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          shape: CircleBorder(
-                            side: BorderSide(
-                              color: Colors.black,
-                            ),
-                          ),
-                          backgroundColor: Colors.white,
-                          foregroundColor: Colors.black,
-                          elevation: 0,
-                        ),
-                        onPressed: () {
-                          myAns.add(0);
-                          pageController.animateToPage(
-                            page++,
-                            duration: Duration(milliseconds: 300),
-                            curve: Curves.easeIn,
-                          );
-                          setState(() {});
-                        },
-                        child: Text(
-                          'a',
-                          style: TextStyle(
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          shape: CircleBorder(
-                            side: BorderSide(
-                              color: Colors.black,
-                            ),
-                          ),
-                          backgroundColor: Colors.white,
-                          foregroundColor: Colors.black,
-                          elevation: 0,
-                        ),
-                        onPressed: () {
-                          if (page <= 70) {
-                            myAns.add(1);
-                            pageController.animateToPage(
-                              page++,
-                              duration: Duration(milliseconds: 300),
-                              curve: Curves.easeIn,
-                            );
-                          }
-
-                          setState(() {});
-                        },
-                        child: Text(
-                          'b',
-                          style: TextStyle(
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                )
               ],
             ),
           ),
@@ -278,7 +231,6 @@ class _TestScreenState extends State<TestScreen> {
                   var type4 = ScoreP >= 10 ? 'P' : 'F';
 
                   var predictType = type1 + type2 + type3 + type4;
-                  print(predictType);
 
                   Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(
@@ -291,11 +243,52 @@ class _TestScreenState extends State<TestScreen> {
                     (route) => false,
                   );
                 },
-                child: Text('제출하기'),
-                style: ButtonStyle(),
+                style: const ButtonStyle(),
+                child: const Text('제출하기'),
               ),
             ),
         ],
+      ),
+    );
+  }
+
+  renderAppBar() {
+    return AppBar(
+      foregroundColor: Colors.black,
+      title: const Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            '제2교시',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          Text(
+            "남의 영역",
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          Text(
+            '좋아하는 형',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ],
+      ),
+      centerTitle: true,
+      backgroundColor: CommonValue.paperColor,
+      elevation: 0,
+      shape: const Border(
+        bottom: BorderSide(
+          color: Colors.black,
+          width: CommonValue.commonWidth,
+        ),
       ),
     );
   }
