@@ -31,7 +31,7 @@ class _TestScreenState extends State<TestScreen> {
 
     return DefaultLayout(
       appBar: renderAppBar(),
-      body: Column(
+      body: ListView(
         children: [
           Text(
             '⭐️ ${widget.name}이(가) 어떤 사람인지 생각하며 답변해 주시기 바랍니다.',
@@ -82,6 +82,11 @@ class _TestScreenState extends State<TestScreen> {
               },
             ),
           ),
+          const SizedBox(height: 40),
+          Text(
+            ' 답안 작성',
+            style: defaultTextStyle,
+          ),
           const SizedBox(height: 20),
           // 보기 a, b
           Container(
@@ -106,13 +111,15 @@ class _TestScreenState extends State<TestScreen> {
                     elevation: 0,
                   ),
                   onPressed: () {
-                    myAns.add(0);
-                    pageController.animateToPage(
-                      page++,
-                      duration: const Duration(milliseconds: 300),
-                      curve: Curves.easeIn,
-                    );
-                    setState(() {});
+                    if (page <= 70) {
+                      myAns.add(0);
+                      pageController.animateToPage(
+                        page++,
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeIn,
+                      );
+                      setState(() {});
+                    }
                   },
                   child: const Text('a', style: defaultTextStyle),
                 ),
@@ -151,7 +158,9 @@ class _TestScreenState extends State<TestScreen> {
           ),
           if (page == 71)
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              padding: const EdgeInsets.symmetric(
+                vertical: 16,
+              ),
               child: ElevatedButton(
                 onPressed: () {
                   var ScoreE = myAns[0] +
