@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mbtiology/2_test_screen/test_screen.dart';
-import 'package:mbtiology/common/const.dart';
+import 'package:mbtiology/common/common_value.dart';
 import 'package:mbtiology/common/default_layout.dart';
-import 'package:mbtiology/common/mbti.dart';
+import 'package:mbtiology/3_result_screen/mbti.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

@@ -20,7 +20,7 @@ class MBTI {
     'ENTP'
   ];
 
-  static Map gift = {
+  static Map<String, List<String>> gift = {
     "ISTJ": [
       Gift.device,
       Gift.book,
@@ -43,7 +43,7 @@ class MBTI {
       Gift.lprecord,
     ],
     "INTJ": [
-      Gift.puzzle,
+      Gift.puzzlegame,
       Gift.device,
       Gift.book,
       Gift.ticket,
@@ -81,7 +81,7 @@ class MBTI {
       Gift.book,
       Gift.ticket,
       Gift.perfume,
-      Gift.puzzle,
+      Gift.puzzlegame,
       Gift.painting,
     ],
     "ENTJ": [
@@ -121,7 +121,7 @@ class MBTI {
     ],
     "ENFP": [
       Gift.crayons,
-      Gift.puzzle,
+      Gift.puzzlegame,
       Gift.painting,
       Gift.ticket,
       Gift.book,
@@ -135,7 +135,7 @@ class MBTI {
     ],
   };
 
-  static Map feature = {
+  static Map<String, String> feature = {
     "ISTJ": '일반적으로 공간과 기능에 대한 감각이 뛰어나고 예술적 감각이 뛰어납니다.',
     "ISFJ": '보통 자신의 감정을 표현하지 않고 속으로만 삭입니다.',
     "INFJ": '질서정연하고 체계적인 것을 매우 중요하게 생각합니다.',

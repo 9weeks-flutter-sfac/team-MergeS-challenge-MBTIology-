@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mbtiology/common/const.dart';
+import 'package:mbtiology/common/common_value.dart';
 
 class DefaultLayout extends StatelessWidget {
   final Widget body;

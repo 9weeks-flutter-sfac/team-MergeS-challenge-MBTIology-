@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mbtiology/3_result_screen/result_screen.dart';
-import 'package:mbtiology/common/const.dart';
+import 'package:mbtiology/common/common_value.dart';
 import 'package:mbtiology/common/default_layout.dart';
-import 'package:mbtiology/common/questions.dart' as questions;
+import 'package:mbtiology/2_test_screen/questions.dart' as questions;
 
 class TestScreen extends StatefulWidget {
   final String name;
@@ -34,7 +34,7 @@ class _TestScreenState extends State<TestScreen> {
       body: ListView(
         children: [
           Text(
-            '⭐️ ${widget.name}이(가) 어떤 사람인지 생각하며 답변해 주시기 바랍니다.',
+            '⭐️ ${widget.name} 이(가) 어떤 사람인지 생각하며 답변해 주시기 바랍니다.',
             style: defaultTextStyle,
           ),
           const SizedBox(height: 20),
