@@ -24,6 +24,8 @@
 - 일관된 컨셉을 위해 전반적으로 쓰이는 상수를 묶어 클래스로 분리하였습니다.
 - animate_do, widgets_to_image, share_plus 등 애니메이션 효과와 스크린 캡처/공유를 위해 다양한 라이브러리를 적용해 보았습니다.
 
+### 서비스 설명
+
 전국민이 모두 알고 있는 MBTI에 대한 새로운 접근!
 좋아하는 사람의 MBTI를 맞춰보는 방법으로 제작했습니다.
 
@@ -36,6 +38,7 @@
 결과를 받아보고 공유해보세요.
 해당 유형에 맞는 선물도 추천드리니 성적표와 함께 전달하면 더욱 좋습니다.
 
+### 스크린 샷
 ![image](https://github.com/9weeks-flutter-sfac/team-MergeS-challenge-MBTIology-/assets/128967431/553ae21d-0056-4e1c-96b9-f3159ba63fc3)
 ![image](https://github.com/9weeks-flutter-sfac/team-MergeS-challenge-MBTIology-/assets/128967431/caa2a8a1-4a72-411c-8431-2e8fb76a713a)
 ![image](https://github.com/9weeks-flutter-sfac/team-MergeS-challenge-MBTIology-/assets/128967431/c7afd5e4-0029-4754-93af-556391468141)
