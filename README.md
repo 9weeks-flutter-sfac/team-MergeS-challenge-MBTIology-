@@ -1,22 +1,10 @@
 # team-MergeS-challenge-MBTIology-
 
-2023.09.26<br>
-신혜: 결과화면 UI, 컨셉<br>
-희정: 팀명, 서비스명<br>
-성완: 각 성격별 중심 키워드, 통일된 양식으로<br>
-상현: 이미지 어떤 거 쓸지 생각해보기, 통일성있게 뽑아내는 방법으로<br>
-
-2023.09.27<br>
-신혜: 레이아웃, 설계 - 패딩 등 여백, 폰트 설정, 필요 변수/상수 정리, 필요 위젯 정리<br>
-희정: 테스트 문항/보기 번역, 정리, 선물패키지 팡 구현 방법<br>
-성완: 유형별 특성, 선물 스크립트 정리<br>
-상현: 선물 이미지 다운로드 (선물팡 구현가능한 패키지 찾기)<br>
-
-2023.10.04<br>
-리더 & 관리(정리): 이신혜<br>
-홈: 정성완<br>
-문제: 도희정<br>
-결과: 최상현<br>
+### 만든 사람들
+리더: 이신혜<br>
+HomeScreen: 정성완<br>
+TestScreen: 도희정<br>
+ResultScreen: 최상현<br>
 
 ### 몇몇 포인트
 - 3개의 스크린, 공용 폴더를 각각 두고 재사용 가능한 코드를 작성하기 위해 노력했습니다.
@@ -39,7 +27,7 @@
 해당 유형에 맞는 선물도 추천드리니 성적표와 함께 전달하면 더욱 좋습니다.
 
 ### 스크린 샷
-![image](https://github.com/9weeks-flutter-sfac/team-MergeS-challenge-MBTIology-/assets/128967431/553ae21d-0056-4e1c-96b9-f3159ba63fc3)
-![image](https://github.com/9weeks-flutter-sfac/team-MergeS-challenge-MBTIology-/assets/128967431/caa2a8a1-4a72-411c-8431-2e8fb76a713a)
-![image](https://github.com/9weeks-flutter-sfac/team-MergeS-challenge-MBTIology-/assets/128967431/c7afd5e4-0029-4754-93af-556391468141)
-![image](https://github.com/9weeks-flutter-sfac/team-MergeS-challenge-MBTIology-/assets/128967431/7a3d4aec-81b9-46b1-9892-3851ae05cae5)
+<img width=30% alt="image" src="https://github.com/9weeks-flutter-sfac/team-MergeS-challenge-MBTIology-/assets/128967431/553ae21d-0056-4e1c-96b9-f3159ba63fc3">
+<img width=30% alt="image" src="https://github.com/9weeks-flutter-sfac/team-MergeS-challenge-MBTIology-/assets/128967431/caa2a8a1-4a72-411c-8431-2e8fb76a713a">
+<img width=30% alt="image" src="https://github.com/9weeks-flutter-sfac/team-MergeS-challenge-MBTIology-/assets/51229121/d4b8ab90-7f07-4f5c-b9bf-73a954ac8f3d">
+
